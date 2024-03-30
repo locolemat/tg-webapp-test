@@ -1,14 +1,14 @@
-from telebot.async_telebot import AsyncTelebot
-from yaml import load
+from telebot.async_telebot import AsyncTeleBot
+from yaml import safe_load
 
 import os
 import asyncio
 
-with open(os.path.join(os.path.dirname(), '..', '..', 'config.yaml')) as f:
-    config = load(f)
+with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', '..', 'config.yaml')) as f:
+    config = safe_load(f)
     TOKEN = config['BOT_TOKEN']
 
-bot = AsyncTelebot("TOKEN")
+bot = AsyncTeleBot(TOKEN)
 
 @bot.message_handler(commands=['help', 'start'])
 async def send_welcome(message):
