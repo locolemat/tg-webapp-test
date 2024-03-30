@@ -15,7 +15,7 @@ bot = AsyncTeleBot(TOKEN)
 @bot.message_handler(commands=['help', 'start'])
 async def send_welcome(message):
     markup = quick_markup({
-        "Open a webapp":{'web_app': WebAppInfo('webapp/url')}
+        "Open a webapp":{'web_app': WebAppInfo('http://localhost:3500')}
     }, row_width=1)
     await bot.send_message(chat_id=message.chat.id, text="Hi! I will be hosting a webapp soon!", reply_markup=markup)
     
