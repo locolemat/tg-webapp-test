@@ -1,3 +1,5 @@
 node_modules/
 config.yaml
 tg_bot/.venv
+localhost-key.pem
+localhost.pem
